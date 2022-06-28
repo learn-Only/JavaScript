@@ -1,44 +1,50 @@
-// If statement with comparison
-let myAge = 10;
+console.log('========================If statement with comparison');
+let myAge = 17;
 
 if (myAge === 5) {
-  console.log('You too young');
+  console.log('You too young\n');
 }
 if (myAge === 17) {
-  console.log('So Sweet');
+  console.log('So Sweet\n');
 }
 if (myAge > 17 && myAge <= 38) {
-  console.log('myAge is beetwen 17 and 30');
+  console.log('myAge is beetwen 17 and 30\n');
 }
 
 let dadAge = 9;
 if (dadAge < myAge) {
-  console.log(dadAge);
+  console.log(`${dadAge}\n`);
 }
 
-// if else statement
+console.log('========================if else statement');
 let number = 3;
 if (number % 2 === 0) {
-  console.log('Genap');
+  console.log('Genap\n');
 } else {
-  console.log('Ganjil');
+  console.log('Ganjil\n');
 }
 
-// if, else if, else
+console.log('========================if, else if, else');
 let hour = 11;
 if (hour < 12) {
-  console.log('selamat pagi');
+  console.log('selamat pagi\n');
 } else if (hour < 18) {
-  console.log('selamat sore');
+  console.log('selamat sore\n');
 } else {
-  console.log('selamat malam');
+  console.log('selamat malam\n');
 }
 
+console.log('========================if, else if, else');
 // nested if statement
 let v1 = 400;
 let v2 = 700;
 if (v1 === 400) {
   if (v2 === 700) {
-    console.log('value of v1 is 400 and v2 is 700');
+    console.log('value of v1 is 400 and v2 is 700\n');
   }
 }
+
+console.log('========================ternari operator');
+let age = 19;
+let canDrive = age > 16 ? 'yes\n' : 'no\n';
+console.log(canDrive);
