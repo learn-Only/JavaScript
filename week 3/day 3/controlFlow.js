@@ -64,3 +64,25 @@ switch (a) {
   default:
     console.log(`I don't know such values\n`);
 }
+
+console.log('========================For Loop');
+for (let i = 0; i <= 5; i++) {
+  console.log(`${i}`);
+}
+
+console.log('\n========================While Loop');
+let nilaiLoop = 1;
+while (nilaiLoop <= 5) {
+  console.log(`jumlah loop ${nilaiLoop}X`);
+  nilaiLoop++;
+}
+
+console.log('\n========================While Loop2');
+let n = 10;
+let result = 0;
+while (n > 1) {
+  n /= 2;
+  result += 1;
+  console.log('---');
+}
+console.log(result);
