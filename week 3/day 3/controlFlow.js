@@ -48,3 +48,19 @@ console.log('========================ternari operator');
 let age = 19;
 let canDrive = age > 16 ? 'yes\n' : 'no\n';
 console.log(canDrive);
+
+console.log('========================Switch');
+let a = 2 + 5;
+switch (a) {
+  case 3:
+    console.log('Too small\n');
+    break;
+  case 4:
+    console.log('excactly!\n');
+    break;
+  case 5:
+    console.log('Too large\n');
+    break;
+  default:
+    console.log(`I don't know such values\n`);
+}
