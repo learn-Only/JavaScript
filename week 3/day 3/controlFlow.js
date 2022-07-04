@@ -1,5 +1,22 @@
+console.log('\n========================Function');
+function luasSegitiga(alas, tinggi) {
+  //   let alas = 10;
+  //   let tinggi = 15;
+  let area = (alas * tinggi) / 2;
+  return area;
+}
+
+console.log(luasSegitiga(2, 3));
+
+console.log('\n========================Arrow Function');
+let funcArrow = (a, b) => {
+  return a + b;
+};
+console.log(funcArrow(3, 4));
+
 console.log('========================If statement with comparison');
 let myAge = 17;
+
 
 if (myAge === 5) {
   console.log('You too young\n');
@@ -70,19 +87,47 @@ for (let i = 0; i <= 5; i++) {
   console.log(`${i}`);
 }
 
-console.log('\n========================While Loop');
-let nilaiLoop = 1;
-while (nilaiLoop <= 5) {
-  console.log(`jumlah loop ${nilaiLoop}X`);
-  nilaiLoop++;
-}
+// console.log('\n========================While Loop');
+// let nilaiLoop = 1;
+// while (nilaiLoop <= 5) {
+//   console.log(`perulangan ke ${nilaiLoop}X`);
+//   nilaiLoop++;
+// }
 
-console.log('\n========================While Loop2');
-let n = 10;
-let result = 0;
-while (n > 1) {
-  n /= 2;
-  result += 1;
-  console.log('---');
-}
-console.log(result);
+// console.log('\n========================While Loop2');
+// let n = 10;
+// let result = 0;
+// while (n > 1) {
+//   n /= 2;
+//   result += 1;
+//   console.log('---');
+// }
+// console.log(result);
+
+// console.log('\n========================Break dan Continou');
+// for (let i = 0; i < 10; i++) {
+//   if (i == 1) {
+//     continue;
+//   }
+//   if (i > 3) {
+//     break;
+//   }
+//   console.log(i);
+// }
+
+// console.log('\n========================while loop');
+// let numsArray = [1, 2, 3, 4, 5];
+// let index = 0;
+// while (index < numsArray.length) {
+//   console.log(`current index: ${index}`);
+//   console.log(`current element: ${numsArray[index]}`);
+//   console.log('============');
+//   index++;
+// }
+
+// console.log('\n========================For loop');
+// for (let index = 0; index < numsArray.length; index++) {
+//   console.log(`current index: ${index}`);
+//   console.log(`current element: ${numsArray[index]}`);
+//   console.log('==============');
+// }
