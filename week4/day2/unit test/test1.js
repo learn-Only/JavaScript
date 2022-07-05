@@ -45,3 +45,6 @@ function checkPrimaX(iterate) {
 
   return arr[iterate - 1];
 }
+
+module.exports = checkPrima;
+export default arrayUnique;
