@@ -21,4 +21,27 @@ console.log(arrayUnique([10, 20, 30, 40], [5, 10, 15, 59])); // [20, 30, 40]
 console.log(arrayUnique([1, 3, 7], [1, 3, 5])); // [7]
 console.log(arrayUnique([3, 8], [2, 8])); // [3]
 console.log(arrayUnique([1, 2, 3], [3, 2, 1])); // []
-console.log("oke");
+
+console.log("=============== check prima");
+function checkPrima(bil) {
+  if (bil <= 1) return false;
+
+  for (let i = 2; i < bil; i++) {
+    if (bil % i == 0) return false;
+  }
+
+  return true;
+}
+
+function checkPrimaX(iterate) {
+  let i = 2;
+  let arr = [];
+  while (arr.length <= iterate) {
+    if (checkPrima(i)) {
+      arr.push(i);
+    }
+    i++;
+  }
+
+  return arr[iterate - 1];
+}
