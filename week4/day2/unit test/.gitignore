@@ -1,7 +1,0 @@
-.DS_Store
-assets/*
-
-.env
-.prettierrc
-node_modules/*
-coverage/*
