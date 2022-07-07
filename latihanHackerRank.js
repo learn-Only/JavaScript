@@ -99,4 +99,4 @@ function timeConversion(s) {
   return militaryHour + s.substring(2, 8);
 }
 
-console.log(timeConversion("02:05:00PM"));
+console.log(timeConversion("03:05:00PM"));
