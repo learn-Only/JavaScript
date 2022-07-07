@@ -100,3 +100,29 @@ function timeConversion(s) {
 }
 
 console.log(timeConversion("03:05:00PM"));
+
+console.log("\n-------------------hackerrank  counting valleys");
+function countingValleys(step, path) {
+  let valleys = 0;
+  let elevation = 0;
+  for (let i = 0; i < step; i++) {
+    if (path[i] == "D") {
+      console.log("----------");
+      elevation--;
+      console.log(elevation);
+    } else {
+      //'U'
+      if (elevation == 0) {
+        console.log("++++++++++");
+        console.log(elevation);
+        valleys++;
+      }
+      elevation++;
+      console.log("*********");
+      console.log(elevation);
+    }
+  }
+  return valleys;
+}
+
+console.log(countingValleys(8, "UDDDUDUU"));
