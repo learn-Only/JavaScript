@@ -27,51 +27,76 @@
 
 // console.log(findMax([5, 3, 2, 8, 4]));
 
-console.log("--------------------------------------h3 s2");
-function coinChange(coin) {
-  let coinValue = [10, 25, 5, 1];
-  coinValue.sort((a, b) => {
-    return b - a;
-  });
-  let coinIterate = 0;
-  let result = [];
-  while (coin > 0) {
-    if (coin < coinValue[coinIterate]) {
-      coinIterate++;
+console.log("------------latihan day 3 sesi 2");
+// function coinChange(coin) {
+//   let coinValue = [10, 25, 5, 1];
+//   coinValue.sort((a, b) => {
+//     return b - a;
+//   });
+//   let coinIterate = 0;
+//   let result = [];
+//   while (coin > 0) {
+//     if (coin < coinValue[coinIterate]) {
+//       coinIterate++;
+//     } else {
+//       coin -= coinValue[coinIterate];
+//       result += coinValue[coinIterate] + "     ";
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(coinChange(55));
+
+// console.log("--------------------------------------h3 s2");
+
+// function power(num, pow) {
+//   let result = 1;
+//   for (let i = 1; i <= pow; i++) {
+//     result *= num;
+//   }
+//   return result;
+// }
+// console.log(power(2, 3));
+
+// console.log("--------------------------------------");
+// function powerBinary(num, pow) {
+//   if (pow == 0) return 1;
+//   let result = 1;
+//   while (pow > 0) {
+//     if (pow % 2 == 1) {
+//       result *= num;
+//       pow--;
+//     }
+//     pow = pow / 2;
+//     num *= num;
+//   }
+//   return result;
+// }
+
+// console.log(powerBinary(3, 3));
+console.log("-------------------hackerrank time conversion");
+// 12 am => 00
+// 1 am - 12 pm do nothing
+// 1pm - 11pm => add + 12
+function timeConversion(s) {
+  let amPm = s.charAt(8);
+  let militaryHour = "";
+  if (amPm == "A") {
+    if (s.substring(0, 2) == "12") {
+      militaryHour = "00";
     } else {
-      coin -= coinValue[coinIterate];
-      result += coinValue[coinIterate] + "     ";
+      militaryHour = s.substring(0, 2);
+    }
+  } else {
+    //P
+    if (s.substring(0, 2) == "12") {
+      militaryHour = s.substring(0, 2);
+    } else {
+      militaryHour = parseInt(s.substring(0, 2), 10) + 12;
     }
   }
-  return result;
+  return militaryHour + s.substring(2, 8);
 }
 
-console.log(coinChange(55));
-
-console.log("--------------------------------------h3 s2");
-
-function power(num, pow) {
-  let result = 1;
-  for (let i = 1; i <= pow; i++) {
-    result *= num;
-  }
-  return result;
-}
-console.log(power(2, 3));
-
-console.log("--------------------------------------");
-function powerBinary(num, pow) {
-  if (pow == 0) return 1;
-  let result = 1;
-  while (pow > 0) {
-    if (pow % 2 == 1) {
-      result *= num;
-      pow--;
-    }
-    pow = pow / 2;
-    num *= num;
-  }
-  return result;
-}
-
-console.log(powerBinary(3, 3));
+console.log(timeConversion("01:05:00PM"));
