@@ -234,3 +234,58 @@ function getMoneySpent(keyboards, drives, s) {
 }
 
 // src https://dalenguyen.medium.com/solved-electronics-shop-algorithm-with-javascript-from-hackerrank-b3a7fa41381f
+
+console.log("--------------------------------------------------------");
+
+function maxSequence(arr) {
+  let maxSum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    let sum = 0;
+    for (let j = i; j < arr.length; j++) {
+      sum += arr[j];
+      if (maxSum < sum) maxSum = sum;
+    }
+  }
+  return maxSum;
+}
+
+// console.log(maxSeq([-2,1,-3,4,-1, 2, 1, -5, 4]));
+
+console.log("------------------");
+
+function getMinDeletions(s) {
+  // Write your code here
+  let unikChar = "";
+  for (const chr of s) {
+    if (unikChar.includes(chr) == false) {
+      unikChar += chr;
+    }
+  }
+
+  return (numRemove = s.length - unikChar.length);
+}
+
+console.log(getMinDeletions("ABACB"));
+// src: https://www.youtube.com/watch?v=QLwcaRqs--k
+
+console.log("-----------------------");
+
+function dnaComplement(s) {
+  // Write your code here
+  let DNA = "";
+  for (let i = 0; i < s.length; i++) {
+    // mengganti huruf string if A => T, T=> A, C=>G, G => C
+    if (s[i] == "A") {
+      DNA += "T";
+    } else if (s[i] == "T") {
+      DNA += "A";
+    } else if (s[i] == "C") {
+      DNA += "G";
+    } else if (s[i] == "G") {
+      DNA += "C";
+    }
+  }
+  return DNA;
+}
+
+console.log(dnaComplement("ATCGTA"));
