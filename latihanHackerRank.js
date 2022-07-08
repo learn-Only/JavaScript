@@ -102,27 +102,135 @@ function timeConversion(s) {
 console.log(timeConversion("03:05:00PM"));
 
 console.log("\n-------------------hackerrank  counting valleys");
-function countingValleys(step, path) {
-  let valleys = 0;
-  let elevation = 0;
-  for (let i = 0; i < step; i++) {
-    if (path[i] == "D") {
-      console.log("----------");
-      elevation--;
-      console.log(elevation);
-    } else {
-      //'U'
-      if (elevation == 0) {
-        console.log("++++++++++");
-        console.log(elevation);
-        valleys++;
-      }
-      elevation++;
-      console.log("*********");
-      console.log(elevation);
-    }
-  }
-  return valleys;
-}
 
 console.log(countingValleys(8, "UDDDUDUU"));
+
+function countingValleys(steps, path) {
+  // Write your code here
+  let valleyCounter = 0; // To count the valleys
+  let altitude = 0; // To increment altitude in every "U" char, otherwise decrement the altitude
+
+  // To go through every char in the string
+  for (let i = 0; i < steps; i++) {
+    let char = path.charAt(i); // To get a char in every cycle
+    // Because we are just interested "U" char
+    if (char === "U") {
+      // check if the current char in the cycle is equal to "U"
+
+      altitude++; // Increment the altitude if the char is "U"
+
+      if (altitude === 0) {
+        // This is the "key" when altitude is equal to 0 means that 1 valley was completed
+        valleyCounter++; // Means that a valley was completed an increment
+      }
+    } else {
+      // If is other char that not is "U"
+      altitude--; // then the altitude will be decremented
+    }
+  }
+
+  // Finally when for cycle ends, return the valleyCounter
+  return valleyCounter;
+}
+
+console.log("\n-------------------Designer PDF Viewer");
+// cari lebar tinggi semua huruf
+// urutkan semua tinggi huruf
+// dapatkan tinggi paling yang paling tinggi
+//kalikan tinggi huruf yang paling tinggi dengan jumlah huruf
+
+// function designerPdfViewer(h, word) {
+//   // Write your code here
+//   // Creating the array of alphabets
+//   var alphabetKeys = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+//     let values = h,
+
+//     // Using the ES6 reduce function to create an object which associates the input height with each alphabet
+//     associated = alphabetKeys.reduce((previous, key, index) => {
+//         previous[key] = values[index];
+//         return previous
+//     }, {});
+
+//     // Storing the height of each letter from the input word
+//     let alphaValues = [];
+
+//     // We split the word and then we loop over each alphabet to get its associated height
+//     word.split("").map((alphabet) => {
+//       if(associated.hasOwnProperty(alphabet)){
+//         alphaValues.push(associated[alphabet]);
+//       }
+//     });
+
+//     // Get the max from the alphaValues array
+//     let max = Math.max.apply(null, alphaValues);
+
+//     // We find the total number of alphabets. Since we assume that the width of each alphabet is 1mm, we can add up each alphabet to get
+//     // total length.
+//     let length = alphaValues.length;
+
+//     // Based on max height and total length, we calculate the area.
+//     return max*length;
+
+// }
+
+function designerPdfViewer(h, word) {
+  // Write your code here
+  let tallestCharHeight = 0;
+  let index = 0;
+  for (let i = 0; i < word.length; i++) {
+    index = word.charCodeAt(i) - 97;
+
+    if (h[index] > tallestCharHeight) {
+      tallestCharHeight = h[index];
+    }
+  }
+  return tallestCharHeight * word.length;
+}
+
+const testHeights = [
+  1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7,
+];
+
+const testWord = "zaba";
+
+console.log(designerPdfViewer(testHeights, testWord));
+
+console.log("\n-------------------viral Advertisting");
+function viralAdvertising(n) {
+  let shared = 5;
+  let liked = 2;
+  let totalLiked = 2;
+  for (let day = 1; day < n; day++) {
+    shared = liked * 3;
+    liked = Math.floor(shared / 2);
+    totalLiked += liked;
+  }
+  return totalLiked;
+}
+
+console.log(viralAdvertising(3));
+
+// src: https://www.youtube.com/watch?v=0CVHI-B3K6o
+
+console.log("\n-------------------electronic shop");
+function getMoneySpent(keyboards, drives, s) {
+  // Complete this function
+  let max = -1;
+
+  // I'm trying to get the total number of keyboard and drive
+  // then compare to the money.
+  for (let i = 0; i < keyboards.length; i++) {
+    var temp = 0;
+    for (let j = 0; j < drives.length; j++) {
+      if (keyboards[i] + drives[j] <= s) {
+        temp = keyboards[i] + drives[j];
+        max = temp > max ? temp : max;
+      }
+    }
+  }
+
+  return max;
+}
+
+// src https://dalenguyen.medium.com/solved-electronics-shop-algorithm-with-javascript-from-hackerrank-b3a7fa41381f
