@@ -289,3 +289,49 @@ function dnaComplement(s) {
 }
 
 console.log(dnaComplement("ATCGTA"));
+
+console.log("-----------------------hackerrank Mars Exploration");
+
+function marsExploration(s) {
+  let sos = "SOS";
+  let count = 0;
+  for (let i = 0; i < s.length; i++) {
+    if (s.charAt(i) != sos.charAt(i % 3)) count++;
+  }
+  return count;
+}
+
+console.log(marsExploration("SOSSPSSQSSOR"));
+console.log(marsExploration("SOSSOSSOS"));
+// src http://www.codeforjs.com/2021/09/mars-exploration-hacker-rank-solution.html
+
+console.log("-----------------------hackerrank  CamelCase");
+function camelcase(s) {
+  // Write your code here
+  let count = 1;
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] == s[i].toUpperCase()) {
+      count++;
+    }
+  }
+  return count;
+}
+
+console.log(camelcase("saveChangesInTheEditor"));
+// src https://medium.com/@jayram_manale/hackerrank-60-camelcase-easy-759bddf1033
+
+console.log("-----------------------hackerrank FindDigits");
+function findDigits(n) {
+  // Write your code here
+  let arr = n.toString().split("");
+  let count = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (Number.isInteger(n / arr[i])) {
+      count += 1;
+    }
+  }
+  return count;
+}
+
+console.log(findDigits(1012));
+// src https://www.youtube.com/watch?v=NWXL15UBHe0
