@@ -320,7 +320,7 @@ function camelcase(s) {
 console.log(camelcase("saveChangesInTheEditor"));
 // src https://medium.com/@jayram_manale/hackerrank-60-camelcase-easy-759bddf1033
 
-console.log("-----------------------hackerrank FindDigits ");
+console.log("-----------------------hackerrank FindDigits  ");
 function findDigits(n) {
   // Write your code here
   let arr = n.toString().split("");
